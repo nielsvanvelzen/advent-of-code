@@ -210,6 +210,16 @@ class Day1Test {
 	}
 
 	@Test
+	fun `answer day 1 question part 1 - Remco`() {
+		val inputR = """
+			1010
+			1
+			2019
+		""".trimIndent()
+		Day1.run(inputR)
+	}
+
+	@Test
 	fun `answer day 1 question part 2`() {
 		Day1.runPart2(input)
 	}

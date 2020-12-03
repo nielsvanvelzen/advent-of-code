@@ -1011,21 +1011,21 @@ private val input2 = """
 
 class Day2Test {
 	@Test
-	fun `d1_p1_sample`() {
+	fun `d2_p1_sample`() {
 		Day2.run(input1)
 	}
 
 	@Test
-	fun `d1_p1_input`() {
+	fun `d2_p1_input`() {
 		Day2.run(input2)
 	}
 	@Test
-	fun `d1_p2_sample`() {
+	fun `d2_p2_sample`() {
 		Day2.runPart2(input1)
 	}
 
 	@Test
-	fun `d1_p2_input`() {
+	fun `d2_p2_input`() {
 		Day2.runPart2(input2)
 	}
 }

@@ -23,5 +23,24 @@ object Day10 {
 		}
 
 		println("jump1 ${jump1.size} * jump3 ${jump3.size} = ${jump1.size * jump3.size}")
+
+		val seed = mutableMapOf(adapters.last() + 3 to 1L)
+		val associations = adapters
+			.reversed()
+			.toMutableList()
+			.also { reversedAdapters -> reversedAdapters.add(0) }
+			.fold(seed) { currentAdapter, nextAdapter ->
+				currentAdapter[nextAdapter] = listOfNotNull(
+					currentAdapter[nextAdapter + 1],
+					currentAdapter[nextAdapter + 2],
+					currentAdapter[nextAdapter + 3]
+				).sum()
+
+				currentAdapter
+			}
+			.values
+			.last()
+
+		println("associations $associations")
 	}
 }

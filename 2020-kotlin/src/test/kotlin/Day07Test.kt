@@ -1,7 +1,7 @@
 import kotlin.test.Test
 
 
-class Day7Test {
+class Day07Test {
 	val SAMPLE_INPUT = """
 		light red bags contain 1 bright white bag, 2 muted yellow bags.
 		dark orange bags contain 3 bright white bags, 4 muted yellow bags.
@@ -623,16 +623,16 @@ class Day7Test {
 
 	@Test
 	fun `d7_p1_sample`() {
-		Day7.run(SAMPLE_INPUT)
+		Day07.run(SAMPLE_INPUT)
 	}
 
 	@Test
 	fun `d7_p1_sample2`() {
-		Day7.run(SAMPLE2_INPUT)
+		Day07.run(SAMPLE2_INPUT)
 	}
 
 	@Test
 	fun `d7_p1_input`() {
-		Day7.run(REAL_INPUT)
+		Day07.run(REAL_INPUT)
 	}
 }

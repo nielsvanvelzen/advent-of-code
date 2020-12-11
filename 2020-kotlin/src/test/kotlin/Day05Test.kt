@@ -1,7 +1,7 @@
 import kotlin.test.Test
 
 
-class Day5Test {
+class Day05Test {
 	val SAMPLE_INPUT = """
 		FBFBBFFRLR
 		BFFFBBFRRR
@@ -895,11 +895,11 @@ class Day5Test {
 
 	@Test
 	fun `d5_p1_sample`() {
-		Day5.run(SAMPLE_INPUT)
+		Day05.run(SAMPLE_INPUT)
 	}
 
 	@Test
 	fun `d5_p1_input`() {
-		Day5.run(REAL_INPUT)
+		Day05.run(REAL_INPUT)
 	}
 }

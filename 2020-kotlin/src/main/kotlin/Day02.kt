@@ -1,4 +1,4 @@
-object Day2 {
+object Day02 {
 	private val regex = "^(\\d+)-(\\d+)\\s+(.):\\s+(.*?)\$".toRegex()
 
 	private data class Policy(val range: IntRange, val letter: Char, val password: String)

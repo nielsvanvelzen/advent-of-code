@@ -1,4 +1,4 @@
-object Day4 {
+object Day04 {
 	fun run(input: String, strict: Boolean = false) {
 		// Parse passport input
 		val passports = input.split("\\n{2}".toRegex()).map { passport ->

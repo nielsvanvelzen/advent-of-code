@@ -1,4 +1,4 @@
-object Day6 {
+object Day06 {
 	fun run(input: String) {
 		// Convert to List<List<List<Char>>> (group<person<answer>>>)
 		val groups = input.split("\\n{2}".toRegex()).map { group ->

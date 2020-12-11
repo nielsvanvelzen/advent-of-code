@@ -1,7 +1,7 @@
 import kotlin.test.Test
 
 
-class Day6Test {
+class Day06Test {
 	val SAMPLE_INPUT = """
 		abc
 
@@ -2251,11 +2251,11 @@ class Day6Test {
 
 	@Test
 	fun `d6_p1_sample`() {
-		Day6.run(SAMPLE_INPUT)
+		Day06.run(SAMPLE_INPUT)
 	}
 
 	@Test
 	fun `d6_p1_input`() {
-		Day6.run(REAL_INPUT)
+		Day06.run(REAL_INPUT)
 	}
 }

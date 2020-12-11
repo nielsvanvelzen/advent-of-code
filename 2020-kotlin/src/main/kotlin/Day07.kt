@@ -1,4 +1,4 @@
-object Day7 {
+object Day07 {
 	data class Condition(val amount: Int, val type: String)
 
 	fun run(input: String) {

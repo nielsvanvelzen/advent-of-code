@@ -1,5 +1,5 @@
 @OptIn(ExperimentalStdlibApi::class)
-object Day9 {
+object Day09 {
 	fun run(input: String, preamble: Int = 25) {
 		val numbers = input.lines().map { it.toLong() }
 		var firstInvalid = -1L

@@ -1,4 +1,4 @@
-object Day8 {
+object Day08 {
 	fun run(input: String, terminateEarly: Boolean) {
 		val instructions = input.lines().map {
 			val instruction = it.substring(0 until 3)

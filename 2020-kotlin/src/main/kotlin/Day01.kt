@@ -1,4 +1,4 @@
-object Day1 {
+object Day01 {
 	fun run(input: String) {
 		val needle = 2020
 		val expenses = input.split("\n").map { it.toInt() }.sorted()

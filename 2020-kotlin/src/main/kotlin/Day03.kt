@@ -2,7 +2,7 @@ sealed class Instruction
 data class RightInstruction(val amount: Int = 0) : Instruction()
 data class DownInstruction(val amount: Int = 0) : Instruction()
 
-object Day3 {
+object Day03 {
 	const val TREE = '#'
 	fun run(map: String, instructionTemplates: List<String>) {
 		val totalTrees = mutableListOf<Long>()

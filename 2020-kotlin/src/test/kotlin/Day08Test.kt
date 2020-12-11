@@ -1,7 +1,7 @@
 import kotlin.test.Test
 
 
-class Day8Test {
+class Day08Test {
 	val SAMPLE_INPUT = """
 		nop +0
 		acc +1
@@ -666,21 +666,21 @@ class Day8Test {
 
 	@Test
 	fun `d8_p1_sample`() {
-		Day8.run(SAMPLE_INPUT, true)
+		Day08.run(SAMPLE_INPUT, true)
 	}
 
 	@Test
 	fun `d8_p1_input`() {
-		Day8.run(REAL_INPUT,true)
+		Day08.run(REAL_INPUT,true)
 	}
 
 	@Test
 	fun `d8_p2_sample`() {
-		Day8.run(SAMPLE_INPUT, false)
+		Day08.run(SAMPLE_INPUT, false)
 	}
 
 	@Test
 	fun `d8_p2_input`() {
-		Day8.run(REAL_INPUT, false)
+		Day08.run(REAL_INPUT, false)
 	}
 }

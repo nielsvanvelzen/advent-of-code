@@ -1,4 +1,4 @@
-object Day5 {
+object Day05 {
 	fun run(input: String) {
 		val all = mutableListOf<Int>()
 

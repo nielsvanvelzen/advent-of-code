@@ -789,6 +789,7 @@ class Day12Test {
 	fun `d12_p1_input`() {
 		Day12.run(REAL_INPUT, false)
 	}
+
 	@Test
 	fun `d12_p2_sample`() {
 		Day12.run(SAMPLE_INPUT, true)

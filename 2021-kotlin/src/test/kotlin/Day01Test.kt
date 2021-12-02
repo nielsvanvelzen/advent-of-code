@@ -2033,12 +2033,12 @@ class Day01Test {
 
 	@Test
 	fun day1_part2_sample() {
-		assertEquals(5, Day01.runPart2(part1SampleInput))
+		assertEquals(5, Day01.runPart2(part2SampleInput))
 	}
 
 	@Test
 	fun day1_part2_input() {
-		val answer = Day01.runPart2(part1Input)
+		val answer = Day01.runPart2(part2Input)
 		println("Answer for day 1 part 2 is $answer")
 	}
 }

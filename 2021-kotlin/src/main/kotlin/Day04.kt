@@ -99,4 +99,52 @@ object Day04 {
 
 		return bingo.sumUnmarked() * number
 	}
+
+	fun runPart2(input: String): Int {
+		val lines = input.lineSequence().iterator()
+
+		// Numbers for each round
+		val roundNumbers = lines.next().split(",").map(String::toInt)
+		val cards = mutableListOf<BingoCard>()
+
+		var currentCardRow = 0
+		var currentCard = BingoCard()
+		while (lines.hasNext()) {
+			val line = lines.next()
+			if (line.isBlank()) continue
+
+			line.split(' ').filterNot { it.isBlank() }.map(String::toInt).forEachIndexed { index, i ->
+				currentCard.setNum(currentCardRow, index, i)
+			}
+
+			currentCardRow++
+			if (currentCardRow >= BingoCard.HEIGHT) {
+				cards.add(currentCard)
+				currentCard = BingoCard()
+				currentCardRow = 0
+			}
+		}
+
+		var bingo: BingoCard? = null
+		var round = 0
+		var number = 0
+		while (bingo == null) {
+			number = roundNumbers[round]
+
+			for (i in cards.indices.reversed()) {
+				val card = cards[i]
+
+				val changed = card.setMark(number)
+				if (changed && card.checkBingo()) {
+					if (cards.size == 1) bingo = card
+					cards.removeAt(i)
+				}
+			}
+
+			round++
+		}
+		println("$round $number ${bingo.sumUnmarked()}")
+
+		return bingo.sumUnmarked() * number
+	}
 }

@@ -1,6 +1,3 @@
-import kotlin.math.max
-import kotlin.math.min
-
 object Day05 {
 	data class Line(
 		val x1: Int,
@@ -8,14 +5,26 @@ object Day05 {
 		val x2: Int,
 		val y2: Int,
 	) {
-		val points by lazy {
-			if (x1 == x2) (min(y1, y2)..max(y1, y2)).map { x1 to it }
-			else if (y1 == y2) (min(x1, x2)..max(x1, x2)).map { it to y1 }
-			else emptyList()
+		fun points(allowDiagonal: Boolean): List<Pair<Int, Int>> {
+			val xRange = (if (x1 <= x2) x1..x2 else x1 downTo x2).toList()
+			val yRange = (if (y1 <= y2) y1..y2 else y1 downTo y2).toList()
+
+			return when {
+				x1 == x2 -> yRange.map { y -> x1 to y }
+				y1 == y2 -> xRange.map { x -> x to y1 }
+				allowDiagonal -> {
+					val points = mutableListOf<Pair<Int, Int>>()
+					for (i in xRange.indices) {
+						points.add(xRange[i] to yRange[i])
+					}
+					points
+				}
+				else -> emptyList()
+			}
 		}
 	}
 
-	fun runPart1(input: String): Int {
+	fun run(input: String, allowDiagonal: Boolean): Int {
 		val regex = Regex("""^(\d+),(\d+)\s->\s(\d+),(\d+)$""")
 		var width = 0
 		var height = 0
@@ -34,7 +43,7 @@ object Day05 {
 
 		// Mark overlap in map
 		for (line in lines) {
-			for ((x, y) in line.points) {
+			for ((x, y) in line.points(allowDiagonal)) {
 				map[y][x]++
 			}
 		}
@@ -51,4 +60,7 @@ object Day05 {
 		// Count overlapping tiles
 		return map.sumOf { x -> x.count { y -> y >= 2 } }
 	}
+
+	fun runPart1(input: String): Int = run(input, false)
+	fun runPart2(input: String): Int = run(input, true)
 }

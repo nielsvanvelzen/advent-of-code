@@ -15,4 +15,15 @@ class Day08Test {
 		val answer = Day08.runPart1(input)
 		println("Answer for day 8 part 1 is $answer")
 	}
+
+	@Test
+	fun day8_part2_sample() {
+		assertEquals(61229, Day08.runPart2(sample))
+	}
+
+	@Test
+	fun day8_part2_input() {
+		val answer = Day08.runPart2(input)
+		println("Answer for day 8 part 2 is $answer")
+	}
 }

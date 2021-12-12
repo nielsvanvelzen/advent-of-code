@@ -1,5 +1,5 @@
 object Day10 {
-	fun runPart1(input: String): Int {
+	fun runPart1(input: String): Long {
 		val lines = input.lines()
 
 		fun parseLine(line: String): Int {
@@ -28,7 +28,40 @@ object Day10 {
 					'>' -> 25137
 					else -> 0
 				}
-			}.toInt()
+			}.toLong()
+		}
+	}
+
+	fun runPart2(input: String): Long {
+		val lines = input.lines()
+
+		fun parseLine(line: String): Long? {
+			val stack = ArrayDeque<Char>()
+			for (index in line.indices) {
+				when (val char = line[index]) {
+					// Open
+					'(' -> stack.add(')')
+					'[' -> stack.add(']')
+					'{' -> stack.add('}')
+					'<' -> stack.add('>')
+					// Close
+					')', ']', '}', '>' -> if (stack.last() != char) return null else stack.removeLast()
+				}
+			}
+
+			return stack.reversed().fold(0L) { acc, char ->
+				acc * 5 + when (char) {
+					')' -> 1
+					']' -> 2
+					'}' -> 3
+					'>' -> 4
+					else -> 0
+				}
+			}
+		}
+
+		return lines.mapNotNull(::parseLine).sorted().run {
+			get(size / 2)
 		}
 	}
 }
